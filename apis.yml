@@ -1,0 +1,64 @@
+aid: doppler
+name: Doppler
+description: >-
+  Doppler is a centralized, cloud-based SecretOps platform that manages
+  application configuration and secrets for humans, CI/CD pipelines, and AI
+  agents across environments. It provides Git-style activity logs, rollbacks,
+  webhooks, SDKs, and deep integrations with AWS, Azure, GCP, Kubernetes, and
+  the major CI providers, with SOC 2 and ISO compliance. The Doppler REST API
+  offers full programmatic control over projects, configs, secrets, tokens,
+  service accounts, and audit logs using Bearer token authentication.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Secrets Management
+  - SecretOps
+  - DevOps
+  - Configuration Management
+  - Security
+  - CI/CD
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/doppler/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: doppler:rest-api
+    name: Doppler REST API
+    description: >-
+      Versioned REST API (v3) for managing Doppler workplaces, projects,
+      environments, configs, secrets, dynamic secrets, service tokens, service
+      accounts, integrations, audit logs, and webhooks. Authentication uses
+      high-entropy Doppler tokens (CLI, Personal, Service, Service Account,
+      Service Account Identity, SCIM, or Audit) presented as Bearer tokens.
+    humanURL: https://docs.doppler.com/reference/api
+    baseURL: https://api.doppler.com/v3
+    tags:
+      - Secrets Management
+      - SecretOps
+      - DevOps
+      - Configuration Management
+    properties:
+      - type: Documentation
+        url: https://docs.doppler.com/reference/api
+      - type: Authentication
+        url: https://docs.doppler.com/reference/auth-token-formats
+      - type: Getting Started
+        url: https://docs.doppler.com/docs/start
+
+common:
+  - type: Website
+    url: https://www.doppler.com
+  - type: Documentation
+    url: https://docs.doppler.com
+  - type: API Documentation
+    url: https://docs.doppler.com/reference/api
+  - type: Pricing
+    url: https://www.doppler.com/pricing
+  - type: Sign Up
+    url: https://dashboard.doppler.com/register
+  - type: GitHub Organization
+    url: https://github.com/DopplerHQ
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
