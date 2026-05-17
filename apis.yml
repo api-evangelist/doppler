@@ -43,7 +43,7 @@ apis:
         url: https://docs.doppler.com/reference/api
       - type: Authentication
         url: https://docs.doppler.com/reference/auth-token-formats
-      - type: Getting Started
+      - type: GettingStarted
         url: https://docs.doppler.com/docs/start
 
 common:
@@ -55,9 +55,9 @@ common:
     url: https://docs.doppler.com/reference/api
   - type: Pricing
     url: https://www.doppler.com/pricing
-  - type: Sign Up
+  - type: SignUp
     url: https://dashboard.doppler.com/register
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/DopplerHQ
 maintainers:
   - FN: Kin Lane
