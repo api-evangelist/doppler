@@ -47,6 +47,8 @@ apis:
         url: https://docs.doppler.com/docs/start
 
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/dopplerhq
   - type: Website
     url: https://www.doppler.com
   - type: Documentation
