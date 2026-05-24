@@ -61,6 +61,8 @@ common:
     url: https://dashboard.doppler.com/register
   - type: GitHubOrganization
     url: https://github.com/DopplerHQ
+  - type: LLMsTxt
+    url: https://docs.doppler.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
