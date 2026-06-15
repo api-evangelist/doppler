@@ -1,0 +1,487 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Doppler REST API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/projects",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List projects"
+        },
+        {
+          "info": {
+            "name": "Create project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.doppler.com/v3/projects",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create project"
+        },
+        {
+          "info": {
+            "name": "Retrieve project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/projects/project",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve project"
+        },
+        {
+          "info": {
+            "name": "Delete project",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.doppler.com/v3/projects/project",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete project"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Environments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List environments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/environments",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List environments"
+        },
+        {
+          "info": {
+            "name": "Create environment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.doppler.com/v3/environments",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create environment"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Configs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List configs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/configs",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "environment",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List configs"
+        },
+        {
+          "info": {
+            "name": "Create config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.doppler.com/v3/configs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create config"
+        },
+        {
+          "info": {
+            "name": "Retrieve config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/configs/config",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "config",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve config"
+        },
+        {
+          "info": {
+            "name": "Delete config",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.doppler.com/v3/configs/config",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete config"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Secrets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List secrets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/configs/config/secrets",
+            "headers": [
+              {
+                "name": "accepts",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "config",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_dynamic_secrets",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dynamic_secrets_ttl_sec",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "secrets",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_managed_secrets",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List secrets"
+        },
+        {
+          "info": {
+            "name": "Update secrets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.doppler.com/v3/configs/config/secrets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update secrets"
+        },
+        {
+          "info": {
+            "name": "Retrieve a secret",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/configs/config/secret",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "config",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a secret"
+        },
+        {
+          "info": {
+            "name": "Download secrets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/configs/config/secrets/download",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "config",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Download secrets"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ServiceTokens",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List service tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/configs/config/tokens",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "config",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List service tokens"
+        },
+        {
+          "info": {
+            "name": "Create service token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.doppler.com/v3/configs/config/tokens",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create service token"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List webhooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/configs/config/webhooks",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "config",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List webhooks"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ActivityLogs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List activity logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/logs",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List activity logs"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve authenticated identity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/me"
+          },
+          "docs": "Retrieve authenticated identity"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
