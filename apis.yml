@@ -47,6 +47,14 @@ apis:
         url: https://docs.doppler.com/docs/start
 
 common:
+  - type: TrustCenter
+    url: security/doppler-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/doppler-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/doppler-domain-security.yml
+  - type: Authentication
+    url: authentication/doppler-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/dopplerhq
   - type: Website
@@ -63,6 +71,8 @@ common:
     url: https://github.com/DopplerHQ
   - type: LlmsText
     url: https://docs.doppler.com/llms.txt
+  - type: Blog
+    url: https://www.doppler.com/blog/rss.xml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
