@@ -47,6 +47,8 @@ apis:
         url: https://docs.doppler.com/docs/start
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/doppler-agentic-access.yml
   - type: TrustCenter
     url: security/doppler-trust-center.yml
   - type: VulnerabilityDisclosure
