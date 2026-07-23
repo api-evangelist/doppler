@@ -1,0 +1,67 @@
+openapi: 3.1.0
+info:
+  title: Doppler REST ActivityLogs Environments API
+  description: Doppler REST API for managing workplaces, projects, environments, configs, secrets, service tokens, service accounts, dynamic secrets, integrations, syncs, webhooks, change requests, and audit logs. Uses Bearer token authentication. Endpoints derived from public Doppler documentation at https://docs.doppler.com/reference/api — best-effort, not exhaustive.
+  version: '3'
+  contact:
+    name: Doppler
+    url: https://www.doppler.com
+  license:
+    name: Proprietary
+servers:
+- url: https://api.doppler.com
+  description: Doppler production API
+security:
+- BearerAuth: []
+tags:
+- name: Environments
+paths:
+  /v3/environments:
+    get:
+      tags:
+      - Environments
+      summary: List environments
+      operationId: listEnvironments
+      parameters:
+      - in: query
+        name: project
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - Environments
+      summary: Create environment
+      operationId: createEnvironment
+      parameters:
+      - in: query
+        name: project
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                slug:
+                  type: string
+              required:
+              - name
+              - slug
+      responses:
+        '200':
+          description: Created
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Doppler API Token

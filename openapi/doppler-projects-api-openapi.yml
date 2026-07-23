@@ -1,0 +1,129 @@
+openapi: 3.1.0
+info:
+  title: Doppler REST ActivityLogs Projects API
+  description: Doppler REST API for managing workplaces, projects, environments, configs, secrets, service tokens, service accounts, dynamic secrets, integrations, syncs, webhooks, change requests, and audit logs. Uses Bearer token authentication. Endpoints derived from public Doppler documentation at https://docs.doppler.com/reference/api — best-effort, not exhaustive.
+  version: '3'
+  contact:
+    name: Doppler
+    url: https://www.doppler.com
+  license:
+    name: Proprietary
+servers:
+- url: https://api.doppler.com
+  description: Doppler production API
+security:
+- BearerAuth: []
+tags:
+- name: Projects
+paths:
+  /v3/projects:
+    get:
+      tags:
+      - Projects
+      summary: List projects
+      operationId: listProjects
+      parameters:
+      - in: query
+        name: page
+        schema:
+          type: integer
+          default: 1
+      - in: query
+        name: per_page
+        schema:
+          type: integer
+          default: 20
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectList'
+    post:
+      tags:
+      - Projects
+      summary: Create project
+      operationId: createProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectCreate'
+      responses:
+        '200':
+          description: Created
+  /v3/projects/project:
+    get:
+      tags:
+      - Projects
+      summary: Retrieve project
+      operationId: getProject
+      parameters:
+      - in: query
+        name: project
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Projects
+      summary: Delete project
+      operationId: deleteProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project:
+                  type: string
+              required:
+              - project
+      responses:
+        '200':
+          description: Deleted
+components:
+  schemas:
+    ProjectCreate:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+    ProjectList:
+      type: object
+      properties:
+        projects:
+          type: array
+          items:
+            $ref: '#/components/schemas/Project'
+        page:
+          type: integer
+    Project:
+      type: object
+      properties:
+        id:
+          type: string
+        slug:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Doppler API Token
