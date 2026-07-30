@@ -9,7 +9,19 @@ description: >-
   offers full programmatic control over projects, configs, secrets, tokens,
   service accounts, and audit logs using Bearer token authentication.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/doppler.png
 tags:
   - Secrets Management
   - SecretOps
@@ -23,29 +35,107 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: doppler:rest-api
-    name: Doppler REST API
-    description: >-
-      Versioned REST API (v3) for managing Doppler workplaces, projects,
-      environments, configs, secrets, dynamic secrets, service tokens, service
-      accounts, integrations, audit logs, and webhooks. Authentication uses
-      high-entropy Doppler tokens (CLI, Personal, Service, Service Account,
-      Service Account Identity, SCIM, or Audit) presented as Bearer tokens.
-    humanURL: https://docs.doppler.com/reference/api
-    baseURL: https://api.doppler.com/v3
-    tags:
-      - Secrets Management
-      - SecretOps
-      - DevOps
-      - Configuration Management
-    properties:
-      - type: Documentation
-        url: https://docs.doppler.com/reference/api
-      - type: Authentication
-        url: https://docs.doppler.com/reference/auth-token-formats
-      - type: GettingStarted
-        url: https://docs.doppler.com/docs/start
-
+- aid: doppler:rest-api
+  name: Doppler REST API
+  description: >-
+    Versioned REST API (v3) for managing Doppler workplaces, projects, environments, configs, secrets,
+    dynamic secrets, service tokens, service accounts, integrations, audit logs, and webhooks. Authentication
+    uses high-entropy Doppler tokens (CLI, Personal, Service, Service Account, Service Account Identity,
+    SCIM, or Audit) presented as Bearer tokens.
+  humanURL: https://docs.doppler.com/reference/api
+  baseURL: https://api.doppler.com/v3
+  tags:
+  - Secrets Management
+  - SecretOps
+  - DevOps
+  - Configuration Management
+  properties:
+  - type: Documentation
+    url: https://docs.doppler.com/reference/api
+  - type: Authentication
+    url: https://docs.doppler.com/reference/auth-token-formats
+  - type: GettingStarted
+    url: https://docs.doppler.com/docs/start
+- aid: doppler:doppler-activitylogs-api
+  name: Doppler ActivityLogs API
+  description: The ActivityLogs API from Doppler — 1 operation(s) for activitylogs.
+  humanURL: https://docs.doppler.com/reference/api
+  baseURL: https://api.doppler.com/v3
+  tags:
+  - ActivityLogs
+  properties:
+  - type: OpenAPI
+    url: openapi/doppler-activitylogs-api-openapi.yml
+- aid: doppler:doppler-auth-api
+  name: Doppler Auth API
+  description: The Auth API from Doppler — 1 operation(s) for auth.
+  humanURL: https://docs.doppler.com/reference/api
+  baseURL: https://api.doppler.com/v3
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/doppler-auth-api-openapi.yml
+- aid: doppler:doppler-configs-api
+  name: Doppler Configs API
+  description: The Configs API from Doppler — 2 operation(s) for configs.
+  humanURL: https://docs.doppler.com/reference/api
+  baseURL: https://api.doppler.com/v3
+  tags:
+  - Configs
+  properties:
+  - type: OpenAPI
+    url: openapi/doppler-configs-api-openapi.yml
+- aid: doppler:doppler-environments-api
+  name: Doppler Environments API
+  description: The Environments API from Doppler — 1 operation(s) for environments.
+  humanURL: https://docs.doppler.com/reference/api
+  baseURL: https://api.doppler.com/v3
+  tags:
+  - Environments
+  properties:
+  - type: OpenAPI
+    url: openapi/doppler-environments-api-openapi.yml
+- aid: doppler:doppler-projects-api
+  name: Doppler Projects API
+  description: The Projects API from Doppler — 2 operation(s) for projects.
+  humanURL: https://docs.doppler.com/reference/api
+  baseURL: https://api.doppler.com/v3
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/doppler-projects-api-openapi.yml
+- aid: doppler:doppler-secrets-api
+  name: Doppler Secrets API
+  description: The Secrets API from Doppler — 3 operation(s) for secrets.
+  humanURL: https://docs.doppler.com/reference/api
+  baseURL: https://api.doppler.com/v3
+  tags:
+  - Secrets
+  properties:
+  - type: OpenAPI
+    url: openapi/doppler-secrets-api-openapi.yml
+- aid: doppler:doppler-servicetokens-api
+  name: Doppler ServiceTokens API
+  description: The ServiceTokens API from Doppler — 1 operation(s) for servicetokens.
+  humanURL: https://docs.doppler.com/reference/api
+  baseURL: https://api.doppler.com/v3
+  tags:
+  - ServiceTokens
+  properties:
+  - type: OpenAPI
+    url: openapi/doppler-servicetokens-api-openapi.yml
+- aid: doppler:doppler-webhooks-api
+  name: Doppler Webhooks API
+  description: The Webhooks API from Doppler — 1 operation(s) for webhooks.
+  humanURL: https://docs.doppler.com/reference/api
+  baseURL: https://api.doppler.com/v3
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/doppler-webhooks-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/doppler-agentic-access.yml
