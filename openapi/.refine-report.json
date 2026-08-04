@@ -1,0 +1,28 @@
+{
+  "provider": "doppler",
+  "sources": [
+    "doppler-activitylogs-api-openapi.yml",
+    "doppler-auth-api-openapi.yml",
+    "doppler-configs-api-openapi.yml",
+    "doppler-environments-api-openapi.yml",
+    "doppler-projects-api-openapi.yml",
+    "doppler-secrets-api-openapi.yml",
+    "doppler-servicetokens-api-openapi.yml",
+    "doppler-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "doppler-activitylogs-api-openapi.yml",
+    "doppler-auth-api-openapi.yml",
+    "doppler-configs-api-openapi.yml",
+    "doppler-environments-api-openapi.yml",
+    "doppler-projects-api-openapi.yml",
+    "doppler-secrets-api-openapi.yml",
+    "doppler-servicetokens-api-openapi.yml",
+    "doppler-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

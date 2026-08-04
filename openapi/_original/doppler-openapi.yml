@@ -1,0 +1,404 @@
+openapi: 3.1.0
+info:
+  title: Doppler REST API
+  description: >-
+    Doppler REST API for managing workplaces, projects, environments, configs,
+    secrets, service tokens, service accounts, dynamic secrets, integrations,
+    syncs, webhooks, change requests, and audit logs. Uses Bearer token
+    authentication. Endpoints derived from public Doppler documentation at
+    https://docs.doppler.com/reference/api — best-effort, not exhaustive.
+  version: "3"
+  contact:
+    name: Doppler
+    url: https://www.doppler.com
+  license:
+    name: Proprietary
+servers:
+  - url: https://api.doppler.com
+    description: Doppler production API
+security:
+  - BearerAuth: []
+tags:
+  - name: Projects
+  - name: Environments
+  - name: Configs
+  - name: Secrets
+  - name: ServiceTokens
+  - name: Webhooks
+  - name: ActivityLogs
+  - name: Auth
+paths:
+  /v3/projects:
+    get:
+      tags: [Projects]
+      summary: List projects
+      operationId: listProjects
+      parameters:
+        - in: query
+          name: page
+          schema: { type: integer, default: 1 }
+        - in: query
+          name: per_page
+          schema: { type: integer, default: 20 }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectList'
+    post:
+      tags: [Projects]
+      summary: Create project
+      operationId: createProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectCreate'
+      responses:
+        '200':
+          description: Created
+  /v3/projects/project:
+    get:
+      tags: [Projects]
+      summary: Retrieve project
+      operationId: getProject
+      parameters:
+        - in: query
+          name: project
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [Projects]
+      summary: Delete project
+      operationId: deleteProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project: { type: string }
+              required: [project]
+      responses:
+        '200':
+          description: Deleted
+  /v3/environments:
+    get:
+      tags: [Environments]
+      summary: List environments
+      operationId: listEnvironments
+      parameters:
+        - in: query
+          name: project
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+    post:
+      tags: [Environments]
+      summary: Create environment
+      operationId: createEnvironment
+      parameters:
+        - in: query
+          name: project
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: { type: string }
+                slug: { type: string }
+              required: [name, slug]
+      responses:
+        '200':
+          description: Created
+  /v3/configs:
+    get:
+      tags: [Configs]
+      summary: List configs
+      operationId: listConfigs
+      parameters:
+        - in: query
+          name: project
+          required: true
+          schema: { type: string }
+        - in: query
+          name: environment
+          schema: { type: string }
+        - in: query
+          name: page
+          schema: { type: integer }
+        - in: query
+          name: per_page
+          schema: { type: integer }
+      responses:
+        '200':
+          description: OK
+    post:
+      tags: [Configs]
+      summary: Create config
+      operationId: createConfig
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project: { type: string }
+                environment: { type: string }
+                name: { type: string }
+              required: [project, environment, name]
+      responses:
+        '200':
+          description: Created
+  /v3/configs/config:
+    get:
+      tags: [Configs]
+      summary: Retrieve config
+      operationId: getConfig
+      parameters:
+        - in: query
+          name: project
+          required: true
+          schema: { type: string }
+        - in: query
+          name: config
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [Configs]
+      summary: Delete config
+      operationId: deleteConfig
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project: { type: string }
+                config: { type: string }
+              required: [project, config]
+      responses:
+        '200':
+          description: Deleted
+  /v3/configs/config/secrets:
+    get:
+      tags: [Secrets]
+      summary: List secrets
+      operationId: listSecrets
+      parameters:
+        - in: query
+          name: project
+          required: true
+          schema: { type: string }
+        - in: query
+          name: config
+          required: true
+          schema: { type: string }
+        - in: query
+          name: include_dynamic_secrets
+          schema: { type: boolean, default: false }
+        - in: query
+          name: dynamic_secrets_ttl_sec
+          schema: { type: integer, default: 1800 }
+        - in: query
+          name: secrets
+          schema: { type: string }
+        - in: query
+          name: include_managed_secrets
+          schema: { type: boolean, default: true }
+        - in: header
+          name: accepts
+          schema:
+            type: string
+            enum: [application/json, text/plain]
+            default: application/json
+      responses:
+        '200':
+          description: OK
+    post:
+      tags: [Secrets]
+      summary: Update secrets
+      operationId: updateSecrets
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project: { type: string }
+                config: { type: string }
+                secrets:
+                  type: object
+                  additionalProperties:
+                    type: string
+              required: [project, config, secrets]
+      responses:
+        '200':
+          description: Updated
+  /v3/configs/config/secret:
+    get:
+      tags: [Secrets]
+      summary: Retrieve a secret
+      operationId: getSecret
+      parameters:
+        - in: query
+          name: project
+          required: true
+          schema: { type: string }
+        - in: query
+          name: config
+          required: true
+          schema: { type: string }
+        - in: query
+          name: name
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+  /v3/configs/config/secrets/download:
+    get:
+      tags: [Secrets]
+      summary: Download secrets
+      operationId: downloadSecrets
+      parameters:
+        - in: query
+          name: project
+          required: true
+          schema: { type: string }
+        - in: query
+          name: config
+          required: true
+          schema: { type: string }
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum: [json, env, yaml, docker, dotnet-json]
+            default: json
+      responses:
+        '200':
+          description: OK
+  /v3/configs/config/tokens:
+    get:
+      tags: [ServiceTokens]
+      summary: List service tokens
+      operationId: listServiceTokens
+      parameters:
+        - in: query
+          name: project
+          required: true
+          schema: { type: string }
+        - in: query
+          name: config
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+    post:
+      tags: [ServiceTokens]
+      summary: Create service token
+      operationId: createServiceToken
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                project: { type: string }
+                config: { type: string }
+                name: { type: string }
+                expire_at: { type: string, format: date-time }
+                access: { type: string, enum: [read, read/write] }
+              required: [project, config, name]
+      responses:
+        '200':
+          description: Created
+  /v3/configs/config/webhooks:
+    get:
+      tags: [Webhooks]
+      summary: List webhooks
+      operationId: listWebhooks
+      parameters:
+        - in: query
+          name: project
+          required: true
+          schema: { type: string }
+        - in: query
+          name: config
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+  /v3/logs:
+    get:
+      tags: [ActivityLogs]
+      summary: List activity logs
+      operationId: listActivityLogs
+      parameters:
+        - in: query
+          name: page
+          schema: { type: integer }
+      responses:
+        '200':
+          description: OK
+  /v3/me:
+    get:
+      tags: [Auth]
+      summary: Retrieve authenticated identity
+      operationId: getMe
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Doppler API Token
+  schemas:
+    ProjectList:
+      type: object
+      properties:
+        projects:
+          type: array
+          items:
+            $ref: '#/components/schemas/Project'
+        page:
+          type: integer
+    Project:
+      type: object
+      properties:
+        id: { type: string }
+        slug: { type: string }
+        name: { type: string }
+        description: { type: string }
+        created_at: { type: string, format: date-time }
+    ProjectCreate:
+      type: object
+      required: [name]
+      properties:
+        name: { type: string }
+        description: { type: string }
