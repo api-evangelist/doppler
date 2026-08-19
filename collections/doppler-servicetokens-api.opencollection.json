@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Doppler REST ActivityLogs ServiceTokens API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ServiceTokens",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List service tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.doppler.com/v3/configs/config/tokens",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "config",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List service tokens"
+        },
+        {
+          "info": {
+            "name": "Create service token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.doppler.com/v3/configs/config/tokens",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create service token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
