@@ -62,6 +62,8 @@ apis:
   humanURL: https://docs.doppler.com/reference/api
   baseURL: https://api.doppler.com/v3
   tags:
+  - Activity Logs
+  tags_raw:
   - ActivityLogs
   properties:
   - type: OpenAPI
@@ -72,6 +74,8 @@ apis:
   humanURL: https://docs.doppler.com/reference/api
   baseURL: https://api.doppler.com/v3
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -102,6 +106,8 @@ apis:
   humanURL: https://docs.doppler.com/reference/api
   baseURL: https://api.doppler.com/v3
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -122,6 +128,8 @@ apis:
   humanURL: https://docs.doppler.com/reference/api
   baseURL: https://api.doppler.com/v3
   tags:
+  - Service Tokens
+  tags_raw:
   - ServiceTokens
   properties:
   - type: OpenAPI
@@ -132,6 +140,8 @@ apis:
   humanURL: https://docs.doppler.com/reference/api
   baseURL: https://api.doppler.com/v3
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
