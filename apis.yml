@@ -74,7 +74,7 @@ apis:
   humanURL: https://docs.doppler.com/reference/api
   baseURL: https://api.doppler.com/v3
   tags:
-  - Activity Logs
+  - ActivityLogs
   tags_raw:
   - ActivityLogs
   properties:
@@ -140,7 +140,7 @@ apis:
   humanURL: https://docs.doppler.com/reference/api
   baseURL: https://api.doppler.com/v3
   tags:
-  - Service Tokens
+  - ServiceTokens
   tags_raw:
   - ServiceTokens
   properties:
