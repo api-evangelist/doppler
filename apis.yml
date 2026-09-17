@@ -70,18 +70,6 @@ apis:
     url: https://docs.doppler.com/reference/auth-token-formats
   - type: GettingStarted
     url: https://docs.doppler.com/docs/start
-- aid: doppler:doppler-activitylogs-api
-  name: Doppler ActivityLogs API
-  description: The ActivityLogs API from Doppler — 1 operation(s) for activitylogs.
-  humanURL: https://docs.doppler.com/reference/api
-  baseURL: https://api.doppler.com/v3
-  tags:
-  - Activity Logs
-  tags_raw:
-  - ActivityLogs
-  properties:
-  - type: OpenAPI
-    url: openapi/doppler-activitylogs-api-openapi.yml
 - aid: doppler:doppler-auth-api
   name: Doppler Auth API
   description: The Auth API from Doppler — 1 operation(s) for auth.
@@ -136,18 +124,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/doppler-secrets-api-openapi.yml
-- aid: doppler:doppler-servicetokens-api
-  name: Doppler ServiceTokens API
-  description: The ServiceTokens API from Doppler — 1 operation(s) for servicetokens.
-  humanURL: https://docs.doppler.com/reference/api
-  baseURL: https://api.doppler.com/v3
-  tags:
-  - Service Tokens
-  tags_raw:
-  - ServiceTokens
-  properties:
-  - type: OpenAPI
-    url: openapi/doppler-servicetokens-api-openapi.yml
 - aid: doppler:doppler-webhooks-api
   name: Doppler Webhooks API
   description: The Webhooks API from Doppler — 1 operation(s) for webhooks.
@@ -160,6 +136,26 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/doppler-webhooks-api-openapi.yml
+- aid: doppler:doppler-activity-logs-api
+  name: Doppler Activity Logs API
+  description: The Activity Logs API from Doppler — 1 operation(s) for activity logs.
+  humanURL: https://docs.doppler.com/reference/api
+  baseURL: https://api.doppler.com/v3
+  tags:
+  - Activity Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/doppler-activity-logs-api-openapi.yml
+- aid: doppler:doppler-service-tokens-api
+  name: Doppler Service Tokens API
+  description: The Service Tokens API from Doppler — 1 operation(s) for service tokens.
+  humanURL: https://docs.doppler.com/reference/api
+  baseURL: https://api.doppler.com/v3
+  tags:
+  - Service Tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/doppler-service-tokens-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/doppler-agentic-access.yml
