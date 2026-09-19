@@ -98,6 +98,8 @@ apis:
   humanURL: https://docs.doppler.com/reference/api
   baseURL: https://api.doppler.com/v3
   tags:
+  - Environment
+  tags_raw:
   - Environments
   properties:
   - type: OpenAPI
