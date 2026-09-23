@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Doppler REST ActivityLogs API
+  title: Doppler REST Activity Logs API
   description: Doppler REST API for managing workplaces, projects, environments, configs, secrets, service tokens, service accounts, dynamic secrets, integrations, syncs, webhooks, change requests, and audit logs. Uses Bearer token authentication. Endpoints derived from public Doppler documentation at https://docs.doppler.com/reference/api — best-effort, not exhaustive.
   version: '3'
   contact:
@@ -14,12 +14,12 @@ servers:
 security:
 - BearerAuth: []
 tags:
-- name: ActivityLogs
+- name: Activity Logs
 paths:
   /v3/logs:
     get:
       tags:
-      - ActivityLogs
+      - Activity Logs
       summary: List activity logs
       operationId: listActivityLogs
       parameters:

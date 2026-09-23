@@ -1,14 +1,7 @@
 {
   "provider": "doppler",
   "sources": [
-    "doppler-activitylogs-api-openapi.yml",
-    "doppler-auth-api-openapi.yml",
-    "doppler-configs-api-openapi.yml",
-    "doppler-environments-api-openapi.yml",
-    "doppler-projects-api-openapi.yml",
-    "doppler-secrets-api-openapi.yml",
-    "doppler-servicetokens-api-openapi.yml",
-    "doppler-webhooks-api-openapi.yml"
+    "_original/doppler-openapi.yml"
   ],
   "outputs": [
     "doppler-activitylogs-api-openapi.yml",
@@ -20,9 +13,25 @@
     "doppler-servicetokens-api-openapi.yml",
     "doppler-webhooks-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 2 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "doppler-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: doppler-activity-logs-api-openapi.yml, doppler-service-tokens-api-openapi.yml",
+    "apis.yml register: written (+2 apis, 9 total)"
+  ],
+  "skipped": [
+    "doppler-activity-logs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "doppler-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "doppler-configs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "doppler-environments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "doppler-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "doppler-secrets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "doppler-service-tokens-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "doppler-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Doppler REST ActivityLogs ServiceTokens API
+  title: Doppler REST Service Tokens API
   description: Doppler REST API for managing workplaces, projects, environments, configs, secrets, service tokens, service accounts, dynamic secrets, integrations, syncs, webhooks, change requests, and audit logs. Uses Bearer token authentication. Endpoints derived from public Doppler documentation at https://docs.doppler.com/reference/api — best-effort, not exhaustive.
   version: '3'
   contact:
@@ -14,12 +14,12 @@ servers:
 security:
 - BearerAuth: []
 tags:
-- name: ServiceTokens
+- name: Service Tokens
 paths:
   /v3/configs/config/tokens:
     get:
       tags:
-      - ServiceTokens
+      - Service Tokens
       summary: List service tokens
       operationId: listServiceTokens
       parameters:
@@ -38,7 +38,7 @@ paths:
           description: OK
     post:
       tags:
-      - ServiceTokens
+      - Service Tokens
       summary: Create service token
       operationId: createServiceToken
       requestBody:
