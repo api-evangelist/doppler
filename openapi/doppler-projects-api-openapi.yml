@@ -90,6 +90,24 @@ paths:
           description: Deleted
 components:
   schemas:
+    ProjectList:
+      type: object
+      properties:
+        projects:
+          type: array
+          items:
+            $ref: '#/components/schemas/Project'
+        page:
+          type: integer
+    ProjectCreate:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
     Project:
       type: object
       properties:
@@ -104,24 +122,6 @@ components:
         created_at:
           type: string
           format: date-time
-    ProjectCreate:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-    ProjectList:
-      type: object
-      properties:
-        projects:
-          type: array
-          items:
-            $ref: '#/components/schemas/Project'
-        page:
-          type: integer
   securitySchemes:
     BearerAuth:
       type: http
