@@ -90,6 +90,20 @@ paths:
           description: Deleted
 components:
   schemas:
+    Project:
+      type: object
+      properties:
+        id:
+          type: string
+        slug:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        created_at:
+          type: string
+          format: date-time
     ProjectList:
       type: object
       properties:
@@ -108,20 +122,6 @@ components:
           type: string
         description:
           type: string
-    Project:
-      type: object
-      properties:
-        id:
-          type: string
-        slug:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        created_at:
-          type: string
-          format: date-time
   securitySchemes:
     BearerAuth:
       type: http
