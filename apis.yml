@@ -162,6 +162,9 @@ apis:
   - type: OpenAPI
     url: openapi/doppler-service-tokens-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/doppler-capability-edges.yml
+    name: Doppler Business Capability Map
   - type: AgenticAccess
     url: agentic-access/doppler-agentic-access.yml
   - type: TrustCenter

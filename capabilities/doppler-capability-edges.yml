@@ -1,0 +1,35 @@
+slug: doppler
+provider: Doppler
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Secrets
+  spec_file: doppler-secrets-api-openapi.yml
+  capability_id: BC-4210.60
+  capability_id_l1: BC-4210
+  capability_name: Configuration & Secrets Management
+  confidence: 0.9
+  evidence: GET /v3/configs/config/secrets  listSecrets  List secrets; POST ... updateSecrets  Update
+    secrets; downloadSecrets
+  reason: Direct CRUD and retrieval of application secrets per config is unambiguously management of runtime
+    configuration values and secrets consumed by product services.
+- tag: Configs
+  spec_file: doppler-configs-api-openapi.yml
+  capability_id: BC-4210.60
+  capability_id_l1: BC-4210
+  capability_name: Configuration & Secrets Management
+  confidence: 0.8
+  evidence: POST /v3/configs  createConfig  Create config; "Doppler REST API for managing workplaces,
+    projects, environments, configs, secrets"
+  reason: Doppler configs are the environment-scoped containers of runtime configuration values and secrets
+    consumed by services, which is Configuration & Secrets Management.
