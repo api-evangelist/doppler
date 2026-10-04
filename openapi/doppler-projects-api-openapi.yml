@@ -90,6 +90,15 @@ paths:
           description: Deleted
 components:
   schemas:
+    ProjectList:
+      type: object
+      properties:
+        projects:
+          type: array
+          items:
+            $ref: '#/components/schemas/Project'
+        page:
+          type: integer
     Project:
       type: object
       properties:
@@ -104,15 +113,6 @@ components:
         created_at:
           type: string
           format: date-time
-    ProjectList:
-      type: object
-      properties:
-        projects:
-          type: array
-          items:
-            $ref: '#/components/schemas/Project'
-        page:
-          type: integer
     ProjectCreate:
       type: object
       required:
