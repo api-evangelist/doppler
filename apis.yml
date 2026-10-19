@@ -73,94 +73,16 @@ apis:
     url: https://docs.doppler.com/reference/auth-token-formats
   - type: GettingStarted
     url: https://docs.doppler.com/docs/start
-- aid: doppler:doppler-auth-api
-  name: Doppler Auth API
-  description: The Auth API from Doppler — 1 operation(s) for auth.
+- aid: doppler:doppler-workplace-api
+  name: Doppler Workplace API
+  description: The Workplace API from Doppler — 2 operation(s) for workplace.
   humanURL: https://docs.doppler.com/reference/api
   baseURL: https://api.doppler.com/v3
   tags:
-  - Authentication
-  tags_raw:
-  - Auth
+  - Workplace
   properties:
   - type: OpenAPI
-    url: openapi/doppler-auth-api-openapi.yml
-- aid: doppler:doppler-configs-api
-  name: Doppler Configs API
-  description: The Configs API from Doppler — 2 operation(s) for configs.
-  humanURL: https://docs.doppler.com/reference/api
-  baseURL: https://api.doppler.com/v3
-  tags:
-  - Configs
-  properties:
-  - type: OpenAPI
-    url: openapi/doppler-configs-api-openapi.yml
-- aid: doppler:doppler-environments-api
-  name: Doppler Environments API
-  description: The Environments API from Doppler — 1 operation(s) for environments.
-  humanURL: https://docs.doppler.com/reference/api
-  baseURL: https://api.doppler.com/v3
-  tags:
-  - Environment
-  tags_raw:
-  - Environments
-  properties:
-  - type: OpenAPI
-    url: openapi/doppler-environments-api-openapi.yml
-- aid: doppler:doppler-projects-api
-  name: Doppler Projects API
-  description: The Projects API from Doppler — 2 operation(s) for projects.
-  humanURL: https://docs.doppler.com/reference/api
-  baseURL: https://api.doppler.com/v3
-  tags:
-  - Project
-  tags_raw:
-  - Projects
-  properties:
-  - type: OpenAPI
-    url: openapi/doppler-projects-api-openapi.yml
-- aid: doppler:doppler-secrets-api
-  name: Doppler Secrets API
-  description: The Secrets API from Doppler — 3 operation(s) for secrets.
-  humanURL: https://docs.doppler.com/reference/api
-  baseURL: https://api.doppler.com/v3
-  tags:
-  - Secrets
-  properties:
-  - type: OpenAPI
-    url: openapi/doppler-secrets-api-openapi.yml
-- aid: doppler:doppler-webhooks-api
-  name: Doppler Webhooks API
-  description: The Webhooks API from Doppler — 1 operation(s) for webhooks.
-  humanURL: https://docs.doppler.com/reference/api
-  baseURL: https://api.doppler.com/v3
-  tags:
-  - Webhook
-  tags_raw:
-  - Webhooks
-  properties:
-  - type: OpenAPI
-    url: openapi/doppler-webhooks-api-openapi.yml
-- aid: doppler:doppler-activity-logs-api
-  name: Doppler Activity Logs API
-  description: The Activity Logs API from Doppler — 1 operation(s) for activity logs.
-  humanURL: https://docs.doppler.com/reference/api
-  baseURL: https://api.doppler.com/v3
-  tags:
-  - Activity Logs
-  properties:
-  - type: OpenAPI
-    url: openapi/doppler-activity-logs-api-openapi.yml
-- aid: doppler:doppler-service-tokens-api
-  name: Doppler Service Tokens API
-  description: The Service Tokens API from Doppler — 1 operation(s) for service tokens.
-  humanURL: https://docs.doppler.com/reference/api
-  baseURL: https://api.doppler.com/v3
-  tags:
-  - Service Tokens
-  properties:
-  - type: OpenAPI
-    url: openapi/doppler-service-tokens-api-openapi.yml
+    url: openapi/doppler-workplace-api-openapi.yml
 common:
   - type: CapabilityMap
     url: capabilities/doppler-capability-edges.yml
