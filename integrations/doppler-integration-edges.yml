@@ -24,6 +24,7 @@ checked:
 - https://www.sequoiacap.com/our-companies/
 - https://www.sequoiacap.com/sitemap.xml
 - digital-ocean/integrations/digital-ocean-integration-edges.yml
+- vercel/integrations/vercel-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: GitHub Marketplace (apps)
@@ -267,6 +268,24 @@ edges:
   detected: '2026-10-21'
   detected_by: mirror-platform-listings.py
   category: Developer Tools
+- partner_name: Vercel (own)
+  partner: vercel
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://vercel.com/marketplace/doppler
+  mirror_of: vercel/integrations/vercel-integration-edges.yml
+  apps:
+  - Doppler
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: DevTools
+  partner_tier: third-party
 source:
 - https://github.com/marketplace?type=actions
 - https://github.com/marketplace?type=apps
